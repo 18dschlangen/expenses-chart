@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,700;1,400&display=swap");
+
+p {
+}
+div {
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+.main {
+  height: 500px;
+  width: 500px;
+  margin: auto;
+  margin-top: 150px;
+  background-color: hsl(27, 66%, 92%);
+  display: flex;
+  flex-direction: column;
+  font-family: "DM Sans", sans-serif;
+}
+.top-section {
+  margin-bottom: 20px;
+  display: flex;
+  background-color: hsl(10, 79%, 65%);
+  border-radius: 10px;
+}
+.bottom-section {
+  background-color: hsl(33, 100%, 98%);
+  border-radius: 10px;
+  padding: 30px;
+}
+.balance {
+  padding: 10px;
+  color: hsl(27, 66%, 92%);
+  font-size: 12px;
+  padding-left: 25px;
+  font-weight: 400;
+}
+.balancenum {
+  padding-bottom: 10px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.logo {
+  padding-left: 58%;
+}
+.spending {
+  font-size: 25px;
+  color: hsl(25, 47%, 15%);
+}
+.week {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+  color: hsl(28, 10%, 53%);
+  text-align: center;
+  align-items: flex-end;
+}
+.minicontainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.left {
+}
+.right {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-top: auto;
+}
+.totaltext {
+  font-size: 12px;
+  color: hsl(28, 10%, 53%);
+}
+.total {
+  font-size: 33px;
+  color: hsl(25, 47%, 15%);
+}
+.percentage {
+  margin-left: auto;
+  font-size: 18px;
+  color: hsl(25, 47%, 15%);
+}
+.percentagetext {
+  font-size: 12px;
+  color: hsl(28, 10%, 53%);
+}
+.barcontainer {
+  display: flex;
+  flex-direction: column;
+}
+.bar {
+  height: 20px;
+  background-color: hsl(10, 79%, 65%);
+  width: 50px;
+  border-radius: 5px;
+  margin-bottom: -15px;
+}
+.bar:hover {
+  background-color: hsl(186, 34%, 60%);
+}
+.inner {
+  color: black;
+  visibility: hidden;
+}
+.bar:hover .inner {
+  visibility: visible;
+}

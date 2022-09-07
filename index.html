@@ -1,43 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Expenses chart component</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Frontend Mentor | Expenses chart component</title>
+  </head>
+  <body class="main">
+    <section class="top-section">
+      <div class="balance">
+        <p>My balance</p>
+        <div class="balancenum">$921.48</div>
+      </div>
+      <img src="./images/logo.svg" alt="" class="logo" />
+    </section>
+    <section class="bottom-section">
+      <div class="spending">Spending - Last 7 days</div>
+      <div class="week">
+        <div class="barcontainer">
+          <div class="bar" id="mon"></div>
+          <p>mon</p>
+        </div>
+        <div class="barcontainer">
+          <div class="bar" id="tue"></div>
+          <p>tue</p>
+        </div>
+        <div class="barcontainer">
+          <div class="bar" id="wed"></div>
+          <p>wed</p>
+        </div>
+        <div class="barcontainer">
+          <div class="bar" id="thu"></div>
+          <p>thu</p>
+        </div>
+        <div class="barcontainer">
+          <div class="bar" id="fri"></div>
+          <p>fri</p>
+        </div>
+        <div class="barcontainer">
+          <div class="bar" id="sat"></div>
+          <p>sat</p>
+        </div>
+        <div class="barcontainer">
+          <div class="bar" id="sun"></div>
+          <p>sun</p>
+        </div>
+      </div>
+      <hr style="width: 100%; color: hsl(27, 66%, 92%)" />
+      <div class="minicontainer">
+        <div class="left">
+          <div class="totaltext">Total this month</div>
+          <div class="total">$478.33</div>
+        </div>
+        <div class="right">
+          <div class="percentage">+2.4%</div>
+          <div class="percentagetext">from last month</div>
+        </div>
+      </div>
+    </section>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Dominic</a>.
+    </div>
+  </body>
+  <script>
+    let mon = document.getElementById("mon");
+    let tue = document.getElementById("tue");
+    let wed = document.getElementById("wed");
+    let thu = document.getElementById("thu");
+    let fri = document.getElementById("fri");
+    let sat = document.getElementById("sat");
+    let sun = document.getElementById("sun");
 
-  My balance
-  $921.48
-
-  Spending - Last 7 days
-
-  mon
-  tue
-  wed
-  thu
-  fri
-  sat
-  sun
-
-  Total this month
-  $478.33
-
-  +2.4%
-  from last month
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    fetch("./data.json")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        mon.style.height = data[0].amount * 3 + "px";
+        tue.style.height = data[1].amount * 3 + "px";
+        wed.style.height = data[2].amount * 3 + "px";
+        thu.style.height = data[3].amount * 3 + "px";
+        fri.style.height = data[4].amount * 3 + "px";
+        sat.style.height = data[5].amount * 3 + "px";
+        sun.style.height = data[6].amount * 3 + "px";
+        mon.innerHTML = `<div class="mon inner">${data[0].amount}</div>`;
+        tue.innerHTML = `<div class="tue inner">${data[1].amount}</div>`;
+        wed.innerHTML = `<div class="wed inner">${data[2].amount}</div>`;
+        thu.innerHTML = `<div class="thu inner">${data[3].amount}</div>`;
+        fri.innerHTML = `<div class="fri inner">${data[4].amount}</div>`;
+        sat.innerHTML = `<div class="sat inner">${data[5].amount}</div>`;
+        sun.innerHTML = `<div class="sun inner">${data[6].amount}</div>`;
+        console.log("innerMon", innerMon);
+      })
+      .catch((error) => console.log(error));
+  </script>
 </html>
